@@ -1,0 +1,26 @@
+name: Spa-Francorchamps
+circuit_id: spa
+country: Belgium
+total_laps: 44
+lap_length_km: 7.004
+base_lap_time_s: 104.0
+fuel_load_kg_start: 110.0
+
+track_abrasion: 0.65
+track_evolution_rate: 0.002
+track_temperature_sensitivity: 1.3
+
+safety_car_base_rate: 0.32
+safety_car_laps_mean: 5.5
+safety_car_laps_std: 2.5
+
+overtaking_difficulty: 0.4
+
+# Spa weather increases variability
+weather_rain_probability: 0.35
+
+compound_delta:
+  soft:   -0.85
+  medium:  0.0
+  hard:    0.65
+

@@ -1,0 +1,23 @@
+name: Silverstone
+circuit_id: silverstone
+country: Great Britain
+total_laps: 52
+lap_length_km: 5.891
+base_lap_time_s: 89.0
+fuel_load_kg_start: 105.0
+
+track_abrasion: 0.75
+track_evolution_rate: 0.0025
+track_temperature_sensitivity: 1.1
+
+safety_car_base_rate: 0.22
+safety_car_laps_mean: 5.0
+safety_car_laps_std: 2.0
+
+overtaking_difficulty: 0.5
+
+compound_delta:
+  soft:   -0.8
+  medium:  0.0
+  hard:    0.6
+

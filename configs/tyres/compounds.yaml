@@ -1,0 +1,56 @@
+# Tyre compound definitions
+# All degradation parameters are per-lap values
+
+compounds:
+  soft:
+    id: soft
+    colour: red
+    # Wear model: w(t+1) = w(t) + k_c * A_track * push_factor * (1 + thermal_penalty)
+    wear_rate_base: 0.028          # k_c baseline
+    thermal_degradation_factor: 0.15   # contribution when temp exceeds optimal
+    optimal_temp_c: 90.0
+    temp_sensitivity: 0.008        # deg/lap impact above/below optimal
+    # Performance: Δt_wear = a*w + b*w^2
+    perf_loss_linear: 0.12         # coefficient a
+    perf_loss_quadratic: 0.18      # coefficient b
+    cliff_threshold: 0.72          # wear fraction where degradation accelerates
+    cliff_multiplier: 2.8
+    max_stint_laps: 25
+    initial_perf_advantage_s: -0.9  # vs medium (negative = faster)
+
+  medium:
+    id: medium
+    colour: yellow
+    wear_rate_base: 0.018
+    thermal_degradation_factor: 0.10
+    optimal_temp_c: 85.0
+    temp_sensitivity: 0.006
+    perf_loss_linear: 0.08
+    perf_loss_quadratic: 0.12
+    cliff_threshold: 0.78
+    cliff_multiplier: 2.3
+    max_stint_laps: 35
+    initial_perf_advantage_s: 0.0
+
+  hard:
+    id: hard
+    colour: white
+    wear_rate_base: 0.012
+    thermal_degradation_factor: 0.07
+    optimal_temp_c: 80.0
+    temp_sensitivity: 0.005
+    perf_loss_linear: 0.05
+    perf_loss_quadratic: 0.08
+    cliff_threshold: 0.85
+    cliff_multiplier: 1.8
+    max_stint_laps: 50
+    initial_perf_advantage_s: 0.7
+
+# Pit stop model
+pit_stop:
+  stationary_time_mean_s: 2.40
+  stationary_time_std_s: 0.18
+  pit_lane_delta_mean_s: 20.5    # total time lost entering + exiting pit lane
+  pit_lane_delta_std_s: 0.5
+  unsafe_release_probability: 0.005
+

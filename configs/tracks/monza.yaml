@@ -1,0 +1,27 @@
+name: Monza
+circuit_id: monza
+country: Italy
+total_laps: 53
+lap_length_km: 5.793
+base_lap_time_s: 80.5          # representative qualifying pace baseline
+fuel_load_kg_start: 105.0
+
+# Track surface characteristics
+track_abrasion: 0.55            # 0–1, lower = less tyre wear
+track_evolution_rate: 0.003     # lap time improvement per lap from rubber laid
+track_temperature_sensitivity: 0.8
+
+# Safety car historical frequency
+safety_car_base_rate: 0.18      # P(SC event) per race (historical)
+safety_car_laps_mean: 4.5
+safety_car_laps_std: 1.5
+
+# Overtaking difficulty (affects traffic penalty)
+overtaking_difficulty: 0.3      # 0=easy, 1=impossible
+
+# Compound performance deltas (seconds per lap vs medium baseline)
+compound_delta:
+  soft:   -0.9
+  medium:  0.0
+  hard:    0.7
+

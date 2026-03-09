@@ -1,0 +1,37 @@
+# Default race simulation configuration
+race:
+  track: monza
+  num_drivers: 20
+  simulation_seed: 42
+
+# Monte Carlo settings
+monte_carlo:
+  n_simulations: 10000
+  parallel_workers: 4
+
+# Stochastic noise parameters
+noise:
+  lap_time_std_s: 0.08           # driver lap-to-lap variability (sigma)
+  pit_stop_execution_std_s: 0.18
+  weather_update_interval_laps: 5
+
+# Safety car
+safety_car:
+  enabled: true
+  min_duration_laps: 2
+  max_duration_laps: 8
+  virtual_sc_probability: 0.4   # P(VSC | SC event triggered)
+
+# Fuel
+fuel:
+  consumption_kg_per_lap: 1.85
+  time_penalty_per_kg_s: 0.034  # seconds per kg of fuel
+
+# RL training
+rl:
+  algorithm: PPO
+  total_timesteps: 500000
+  n_envs: 8
+  learning_rate: 3.0e-4
+  gamma: 0.99
+
